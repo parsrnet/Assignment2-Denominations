@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+	<link rel="stylesheet" href="~/Content/bootstrap.css" />
+	<script src="~/Scripts/jquery-3.6.0.js"></script>
+	<script src="~/Scripts/umd/popper.js"></script>
+	<script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+		<table class="table table-bordered">
+			<tr>
+				<td>Denomination</td>
+				<td>Count</td>
+				<td>Amount</td>
+			</tr>
+			@foreach (var denominationCount in ViewBag.Denominations)
+		{
+			<tr>
+				<td>$@denominationCount.Key</td>
+				<td>@denominationCount.Value</td>
+				<td>$@(denominationCount.Key*denominationCount.Value)</td>
+			</tr>
+		}
+		</table>
+    </div>
+</body>
+</html>
